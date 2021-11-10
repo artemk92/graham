@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Graham</string>
+    <string name="copyright">2021 Bell Integrator. Все права защищены</string>
+    <string name="login_message">У вас ещё нет аккаунта?</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="login">Войти</string>
+</resources>
