@@ -11,6 +11,7 @@
         android:height="20dp"
         android:background="@drawable/textedit_switch"
         android:hint="@string/login_hint"
+        android:fontFamily="@font/open_sans"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
@@ -24,12 +25,13 @@
         android:id="@+id/password"
         android:background="@drawable/textedit_switch"
         android:hint="@string/password_hint"
+        android:fontFamily="@font/open_sans"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:paddingLeft="10dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
+        android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -51,8 +53,9 @@
     <Button
         android:id="@+id/loginButton"
         style="@style/Widget.AppCompat.Button.Colored"
+        android:fontFamily="@font/open_sans"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginTop="12dp"
         android:background="@drawable/btn_b4_switch"
         android:ems="10"
@@ -60,4 +63,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:text="TEST"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

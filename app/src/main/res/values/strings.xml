@@ -2,7 +2,7 @@
     <string name="app_name">Graham</string>
     <string name="copyright">2021 Bell Integrator. All right reserved</string>
     <string name="login_message">Don\'t have an account yet?</string>
-    <string name="login_hint">Login</string>
+    <string name="login_hint">Login (your e-mail)</string>
     <string name="password_hint">Password</string>
     <string name="register">Register now</string>
     <string name="login">Log in</string>
