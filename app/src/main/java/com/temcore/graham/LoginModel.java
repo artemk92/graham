@@ -28,36 +28,35 @@ public class LoginModel implements LoginContract.Model {
 
     public String login(String login, String password) {
         authRequestBody = "grant_type=" + gtp + "&username=" + login.replace("@", "%40") +
-        "&password=" + password + "&refresh_token=" + refresh_token;
+                "&password=" + password + "&refresh_token=" + refresh_token;
         cl = Integer.toString(authRequestBody.getBytes(StandardCharsets.US_ASCII).length);
 
-       /* OkHttpClient client = new OkHttpClient();
-        client.interceptors().add(new Interceptor() {
-            @Override
-            public okhttp3.Response intercept(Chain chain) throws IOException {
-                Request original = chain.request();
+        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+        httpClient.addInterceptor(chain -> {
+            Request original = chain.request();
 
-                // Настраиваем запросы
-                Request request = original.newBuilder()
-                        .header("Accept", "application/json")
-                        .header("Authorization", "auth-token")
-                        .method(original.method(), original.body())
-                        .build();
+            Request request = original.newBuilder()
+                    .header("Content-Type", ct)
+                    .header("Accept", accept)
+                    .header("Content-Length",cl)
+                    .header("Host", host)
+                    .header("Accept-Encoding", ae)
+                    .header("Connection", connection)
+                    .method(original.method(), original.body())
+                    .build();
 
-                okhttp3.Response response = chain.proceed(request);
+            return chain.proceed(request);
+        });
 
-                return response;
-            }
-        });*/
-
+        OkHttpClient client = httpClient.build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                //.client(client)
+                .client(client)
                 .build();
 
         Server authService = retrofit.create(Server.class);
-        Call<AuthResponse> call = authService.getAuth(ct, cl, host, accept, ae, connection, authRequestBody);
+        Call<AuthResponse> call = authService.getAuth(authRequestBody);
         call.enqueue(new Callback<AuthResponse>() {
             @Override
             public void onResponse(Call<AuthResponse> call, Response<AuthResponse> response) {
