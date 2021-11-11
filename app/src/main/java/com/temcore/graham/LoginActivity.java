@@ -16,6 +16,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private EditText password;
     private Button loginButton;
     private TextView test;
+    private String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @Override
     public void showText(String text) {
+        this.text = text;
         test.setText(text);
     }
 }

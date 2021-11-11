@@ -10,9 +10,9 @@ public interface Server {
 
     @Headers("User-Agent: GrahamByAK")
     @POST("authorization/oauth/token")
-    public Call<AuthResponse> getAuth(@Header("Content-Type") String ct,
+    public Call<AuthResponse> getAuth(@Header("Content-Type") String ct,@Header("Content-Length") String length,
+                                      @Header("Host") String host,
                                       @Header("Accept") String accept, @Header("Accept-Encoding") String ae,
-                                      @Header("Connection") String connection,  @Body String grant_type,
-                                      @Body String email, @Body String password, @Body String refresh_token);
+                                      @Header("Connection") String connection,  @Body String body);
 
 }
