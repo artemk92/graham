@@ -16,8 +16,6 @@ public class LoginModel implements LoginContract.Model {
 
     public static final String BASE_URL = "https://graham.bellintegrator.com/api/";
     private String gtp = "password";
-    /*private String login;
-    private String password;*/
     private String refresh_token = "";
     private String ct = "application/x-www-form-urlencoded";
     private String cl;
@@ -29,9 +27,7 @@ public class LoginModel implements LoginContract.Model {
     private String authRequestBody;
 
     public String login(String login, String password) {
-        /*this.login = login;
-        this.password = password;*/
-        authRequestBody = "grant_type=" + gtp + "&username=" + login.replace("@","%40") +
+        authRequestBody = "grant_type=" + gtp + "&username=" + login.replace("@", "%40") +
         "&password=" + password + "&refresh_token=" + refresh_token;
         cl = Integer.toString(authRequestBody.getBytes(StandardCharsets.US_ASCII).length);
 

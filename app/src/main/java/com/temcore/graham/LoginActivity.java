@@ -41,13 +41,13 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @Override
     public String getLogin(){
-        String l = login.toString();
+        String l = login.getText().toString();
         return l;
     }
 
     @Override
     public String getPassword(){
-        String p = password.toString();
+        String p = password.getText().toString();
         return p;
     }
 

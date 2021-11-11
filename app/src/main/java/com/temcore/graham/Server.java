@@ -10,9 +10,12 @@ public interface Server {
 
     @Headers("User-Agent: GrahamByAK")
     @POST("authorization/oauth/token")
-    public Call<AuthResponse> getAuth(@Header("Content-Type") String ct,@Header("Content-Length") String length,
-                                      @Header("Host") String host,
-                                      @Header("Accept") String accept, @Header("Accept-Encoding") String ae,
-                                      @Header("Connection") String connection,  @Body String body);
+    Call<AuthResponse> getAuth(@Header("Content-Type") String ct,
+                               @Header("Content-Length") String length,
+                               @Header("Host") String host,
+                               @Header("Accept") String accept,
+                               @Header("Accept-Encoding") String ae,
+                               @Header("Connection") String connection,
+                               @Body String body);
 
 }
