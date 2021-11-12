@@ -2,6 +2,7 @@ package com.temcore.graham;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
@@ -10,7 +11,7 @@ import retrofit2.http.POST;
 public interface Server {
 
     @Headers("User-Agent: GrahamByAK")
-
+    @FormUrlEncoded
     @POST("authorization/oauth/token")
     Call<AuthResponse> getAuth(/*@Header("Content-Type") String ct,
                                @Header("Content-Length") String length,
@@ -18,6 +19,10 @@ public interface Server {
                                @Header("Accept") String accept,
                                @Header("Accept-Encoding") String ae,
                                @Header("Connection") String connection,*/
-                               @Body String body);
+            //@Body String body
+            @Field("grant_type") String gt,
+            @Field("username") String user,
+            @Field("password") String password,
+            @Field("refresh_token") String refresh_token);
 
 }
