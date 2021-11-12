@@ -2,6 +2,9 @@ package com.temcore.graham;
 
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -23,7 +26,7 @@ public class LoginModel implements LoginContract.Model {
     private String ct = "application/x-www-form-urlencoded";
     private String cl;
     private String host = "graham.bellintegrator.com";
-    private String accept = "application/json, text/plain, */*";
+    private String accept = "application/json";
     private String ae = "gzip, deflate, br";
     private String connection = "keep-alive";
     private String id;
@@ -59,9 +62,14 @@ public class LoginModel implements LoginContract.Model {
                 .addInterceptor(interceptor)
                 .build();
 
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .client(client)
                 .build();
 
@@ -73,6 +81,7 @@ public class LoginModel implements LoginContract.Model {
                 if (response.isSuccessful()) {
                     // запрос выполнился успешно, сервер вернул Status 200
                     id = response.body().getUserId();
+                    Log.d("response_body", String.valueOf(response.body()));
                 } else {
                     // сервер вернул ошибку
                     try {
