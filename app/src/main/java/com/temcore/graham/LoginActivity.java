@@ -15,8 +15,6 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     private EditText login;
     private EditText password;
     private Button loginButton;
-    private TextView test;
-    private String text;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +23,9 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
         mPresenter = new LoginPresenter(this);
 
-        login = (EditText) findViewById(R.id.login);
-        password = (EditText) findViewById(R.id.password);
-        loginButton = (Button) findViewById(R.id.loginButton);
-        test = (TextView) findViewById(R.id.test);
+        login = findViewById(R.id.login);
+        password = findViewById(R.id.password);
+        loginButton = findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,20 +37,20 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     }
 
     @Override
+    public void nextActivity(){
+        Intent intent = new Intent(this, MainActivity.class);
+        intent.putExtra("token", mPresenter.getToken());
+        finish();
+    }
+
+    @Override
     public String getLogin(){
-        String l = login.getText().toString();
-        return l;
+        return login.getText().toString();
     }
 
     @Override
     public String getPassword(){
-        String p = password.getText().toString();
-        return p;
+        return password.getText().toString();
     }
 
-    @Override
-    public void showText(String text) {
-        this.text = text;
-        test.setText(text);
-    }
 }

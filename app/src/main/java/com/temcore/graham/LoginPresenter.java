@@ -6,22 +6,25 @@ public class LoginPresenter implements LoginContract.Presenter {
     private LoginContract.Model mModel;
     private String login;
     private String password;
+    private String token;
 
 
-    public LoginPresenter(LoginContract.View mView){
+    public LoginPresenter(LoginContract.View mView) {
         this.mView = mView;
         this.mModel = new LoginModel();
     }
 
     @Override
-    public void onLoginBtnClick(){
+    public void onLoginBtnClick() {
         login = mView.getLogin();
         password = mView.getPassword();
-        mView.showText(mModel.login(login, password)); 
+        mModel.login(login, password);
+        token = mModel.getCookie();
+        mView.nextActivity();
     }
 
-    @Override
-    public void onDestroy() {
-
+    public String getToken() {
+        return token;
     }
+
 }
