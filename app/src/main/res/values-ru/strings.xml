@@ -6,4 +6,9 @@
     <string name="password_hint">Пароль</string>
     <string name="register">Зарегистрироваться</string>
     <string name="login">Войти</string>
+    <string name="title_activity_main">Главная</string>
+    <string name="action_settings">Настройки</string>
+    <string name="menu_home">Главная</string>
+    <string name="menu_bringFriend">Рекомендации</string>
+    <string name="menu_notifications">Уведомления</string>
 </resources>

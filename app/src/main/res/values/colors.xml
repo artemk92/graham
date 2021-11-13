@@ -4,6 +4,7 @@
     <color name="black">#FF000000</color>
     <color name="black20">#20000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#FF888888</color>
     <color name="rubine_red">#ffec006d</color>
     <color name="redsolid">#66ff006d</color>
     <color name="olive_green">#ffc9d200</color>

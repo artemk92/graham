@@ -8,8 +8,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnPrimary</item>
         <!-- Customize your theme here. -->
-        <item name="colorAccent">@color/white</item>
-    </style>
+        <item name="colorAccent">@color/gray</item>
+     </style>
 
     <style name="Theme.Graham.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -18,8 +18,13 @@
 
     <style name="Theme.Graham.AppBarOverlay" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorOnPrimary">@color/rubine_red</item>
+        <item name="fontFamily">@font/open_sans</item>
     </style>
 
 
-    <style name="Theme.Graham.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.Graham.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" >
+        <item name="colorOnPrimary">@color/rubine_red</item>
+        <item name="fontFamily">@font/open_sans</item>
+    </style>
+
 </resources>
