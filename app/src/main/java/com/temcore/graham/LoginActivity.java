@@ -40,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
     public void nextActivity(){
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("token", mPresenter.getToken());
+        startActivity(intent);
         finish();
     }
 

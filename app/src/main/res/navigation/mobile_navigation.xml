@@ -12,14 +12,14 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.temcore.graham.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_bring_friend"
+        android:name="com.temcore.graham.ui.bringFriend.BringFriendFragment"
+        android:label="@string/menu_bringFriend"
+        tools:layout="@layout/fragment_bring_friend" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.temcore.graham.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_notifications"
+        android:name="com.temcore.graham.ui.notifications.NotificationFragment"
+        android:label="@string/menu_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
