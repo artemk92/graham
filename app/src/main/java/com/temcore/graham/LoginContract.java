@@ -5,17 +5,19 @@ public interface LoginContract {
         String getLogin();
 
         String getPassword();
+
         void nextActivity();
 
     }
 
     interface Presenter {
         void onLoginBtnClick();
+
         String getToken();
     }
 
     interface Model {
-        void login(String login, String password);
-        String getCookie();
+        void getCookie(String login, String password);
+        String getToken();
     }
 }

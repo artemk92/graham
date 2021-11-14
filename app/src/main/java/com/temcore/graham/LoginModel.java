@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.concurrent.CountDownLatch;
 
 import okhttp3.Headers;
 import okhttp3.Interceptor;
@@ -24,6 +25,8 @@ public class LoginModel implements LoginContract.Model {
 
     public static final String BASE_URL = "https://graham.bellintegrator.com/api/";
     private String token;
+    private String login;
+    private String password;
     private String gtp = "password";
     private String refresh_token = "";
     private String ct = "application/x-www-form-urlencoded";
@@ -34,7 +37,19 @@ public class LoginModel implements LoginContract.Model {
     private String connection = "keep-alive";
     private String authRequestBody;
 
-    public void login(String login, String password) {
+    @Override
+    public void getCookie(String login, String password) {
+        this.login = login;
+        this.password = password;
+        auth(login, password);
+    }
+
+    @Override
+    public String getToken() {
+        return token;
+    }
+
+    public void auth(String login, String password) {
 
         authRequestBody = "grant_type=" + gtp + "&username=" + login +
                 "&password=" + password + "&refresh_token=" + refresh_token;
@@ -58,6 +73,7 @@ public class LoginModel implements LoginContract.Model {
             return chain.proceed(request);
         });
 
+        //log response
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
 
@@ -68,7 +84,6 @@ public class LoginModel implements LoginContract.Model {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
-                //.addConverterFactory(JacksonConverterFactory.create())
                 .client(client)
                 .build();
 
@@ -80,7 +95,6 @@ public class LoginModel implements LoginContract.Model {
                 if (response.isSuccessful()) {
                     // запрос выполнился успешно, сервер вернул Status 200
                     token = response.body().getAccess_token();
-                   // token = body.getAccess_token();
                 } else {
                     // сервер вернул ошибку, можно реализовать вывод сообщения об ошибке пользователю
                     try {
@@ -99,7 +113,5 @@ public class LoginModel implements LoginContract.Model {
         });
     }
 
-    public String getCookie() {
-        return token;
-    }
 }
+

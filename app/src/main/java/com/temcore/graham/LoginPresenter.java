@@ -18,8 +18,8 @@ public class LoginPresenter implements LoginContract.Presenter {
     public void onLoginBtnClick() {
         login = mView.getLogin();
         password = mView.getPassword();
-        mModel.login(login, password);
-        token = mModel.getCookie();
+        mModel.getCookie(login, password);
+        token = mModel.getToken();
         mView.nextActivity();
     }
 

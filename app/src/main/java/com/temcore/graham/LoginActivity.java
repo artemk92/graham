@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,11 +39,13 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Vi
 
     @Override
     public void nextActivity(){
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("token", mPresenter.getToken());
-        startActivity(intent);
-        finish();
-    }
+        String token = mPresenter.getToken();
+
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                intent.putExtra("token", token);
+                startActivity(intent);
+                finish();
+            }
 
     @Override
     public String getLogin(){

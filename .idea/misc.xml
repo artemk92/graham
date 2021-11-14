@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/ic_app_logo_bw.xml" value="0.1475" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1955" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1955" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1955" />
+        <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/rectangle_br20.xml" value="0.1475" />
+        <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/rectangle_br20red.xml" value="0.1475" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/side_nav_bar.xml" value="0.1955" />
+        <entry key="..\:/Projects/Android/Graham/app/src/main/res/drawable/textedit_border4.xml" value="0.1475" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/activity_login.xml" value="0.11612021857923498" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/activity_splash.xml" value="0.11782786885245902" />
@@ -17,6 +21,7 @@
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/fragment_home.xml" value="0.16944444444444445" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/fragment_notifications.xml" value="0.16944444444444445" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/nav_header_main.xml" value="0.1" />
+        <entry key="..\:/Projects/Android/Graham/app/src/main/res/layout/notifications_layout.xml" value="0.16944444444444445" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/menu/activity_main_drawer.xml" value="0.264" />
         <entry key="..\:/Projects/Android/Graham/app/src/main/res/menu/main.xml" value="0.16944444444444445" />
       </map>
